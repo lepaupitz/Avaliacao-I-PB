@@ -36,7 +36,6 @@ public static void main(String[] args) {
     String nomeUsuario = scanner.nextLine();
         System.out.println("Responda as seguintes pergutas: \n");
 
-    boolean[] resultados = new boolean[perguntas.length];
 
     // Perguntas e verificar se a resposta esta certa ou errada
     for (int i = 0; i < perguntas.length; i++) {
@@ -45,12 +44,10 @@ public static void main(String[] args) {
         String respostaUsuario = scanner.nextLine();
 
         if (respostaUsuario.equalsIgnoreCase(respostas[i])) {
-            resultados[i] = true;
             System.out.println("Resposta correta!\n");
             correto++;
         }
         else {
-            resultados[i] = false;
             System.out.println("Resposta errada.\n");
             errado++;
         }
