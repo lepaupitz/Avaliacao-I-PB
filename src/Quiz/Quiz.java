@@ -34,7 +34,7 @@ public static void main(String[] args) {
     //Nome do usuário
     System.out.print("Digite seu nome: ");
     String nomeUsuario = scanner.nextLine();
-        System.out.println("Responda as seguintes pergutas: ");
+        System.out.println("Responda as seguintes pergutas: \n");
 
     boolean[] resultados = new boolean[perguntas.length];
 
