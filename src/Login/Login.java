@@ -17,11 +17,11 @@ public static void main(String[] args) {
 
     if (validarLoginSenha(login, loginCerto, senha, senhaCerta)) {
         System.out.println("Login e senha válidos!");
+        System.out.println(mensagemHorario());
     } else {
         System.out.println("Login e senha incorretas");
     }
 }
-
 
 
 
@@ -34,6 +34,16 @@ private static boolean validarLoginSenha(String login, String[] loginCerto, Stri
     return false;
         }
 
+private static String mensagemHorario () {
+    int hora = java.time.LocalTime.now().getHour();
+
+    if (hora>= 12 && hora < 18){
+        return "Bom dia, você se logou ao nosso sistema.";
+    }
+    else {
+        return "Erro";
+    }
+}
 
 
 
