@@ -16,13 +16,11 @@ public static void main(String[] args) {
 
 
     if (validarLoginSenha(login, loginCerto, senha, senhaCerta)) {
-        System.out.println("Login e senha válidos!");
         System.out.println(mensagemHorario());
     } else {
         System.out.println("Login e senha incorretas");
     }
 }
-
 
 
 private static boolean validarLoginSenha(String login, String[] loginCerto, String senha,  String[] senhaCerta) {
@@ -37,11 +35,17 @@ private static boolean validarLoginSenha(String login, String[] loginCerto, Stri
 private static String mensagemHorario () {
     int hora = java.time.LocalTime.now().getHour();
 
-    if (hora>= 12 && hora < 18){
+    if (hora>= 6 && hora < 12){
         return "Bom dia, você se logou ao nosso sistema.";
     }
+    else if (hora >= 12 && hora < 18){
+        return "Boa tarde, você se logou ao nosso sistema.";
+    }
+    else if (hora >= 18 && hora < 24){
+        return "Boa noite, você se logou ao nosso sistema.";
+    }
     else {
-        return "Erro";
+        return "Boa madrugada, você se logou ao nosso sistema.";
     }
 }
 
