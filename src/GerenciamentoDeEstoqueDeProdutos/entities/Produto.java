@@ -3,9 +3,9 @@ package GerenciamentoDeEstoqueDeProdutos.entities;
 import java.util.Scanner;
 public class Produto {
 
-        private String nome;
-        private int codigo;
-        private double preco;
+        public String nome;
+        public int codigo;
+        public double preco;
         private int quantidadeEstoque;
 
         public Produto(String nome, int codigo, double preco, int quantidadeEstoque) {
