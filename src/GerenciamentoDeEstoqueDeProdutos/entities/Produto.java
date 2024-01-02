@@ -48,9 +48,23 @@ public class Produto {
                 System.out.println("Você comprou " + quantidadeComprada + " unidades de " + nome);
             }
             else {
-                System.out.println("Quantidade inválida para compra.");
+                System.out.println("Quantidade inválida para compra.\n");
                 informacaoProduto();
             }
+            System.out.println("\nAtualização das informações do produto: ");
+            informacaoProduto();
+        }
+
+        public void venda (int quantidadeVendida){
+            if (quantidadeVendida > 0 && quantidadeVendida <= quantidadeEstoque) {
+                quantidadeEstoque -= quantidadeVendida;
+                System.out.println("Você vendeu " + quantidadeVendida + " unidades de " + nome);
+            }
+            else {
+                System.out.println("Estoque insuficiente para realizar a venda.");
+            }
+            System.out.println("\nAtualização das informações do produto: ");
+            informacaoProduto();
         }
 
 }

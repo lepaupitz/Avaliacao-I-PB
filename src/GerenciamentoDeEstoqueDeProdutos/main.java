@@ -17,6 +17,7 @@ public static void main(String[] args) {
         System.out.println("Menu:");
         System.out.println("1. Exibir inforfomação do produto");
         System.out.println("2. Comprar produto");
+        System.out.println("3. Vender produto");
         System.out.println("0. Sair");
         System.out.println("Escolha uma opção: ");
 
@@ -30,6 +31,11 @@ public static void main(String[] args) {
                 System.out.println("Digite a quantidade a comprar: ");
                 int quantidadeCompra = scanner.nextInt();
                 produto1.compra(quantidadeCompra);
+                break;
+            case 3:
+                System.out.println("Digite a quantidade de venda: ");
+                int quantidadeVenda = scanner.nextInt();
+                produto1.venda(quantidadeVenda);
                 break;
             case 0:
                 System.out.println("Saindo do programa.");
