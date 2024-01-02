@@ -14,7 +14,6 @@ public class Produto {
             this.preco = preco;
             this.quantidadeEstoque = quantidadeEstoque;
         }
-
         public static Produto cadastrarProduto() {
             Scanner scanner = new Scanner(System.in);
 
@@ -33,6 +32,7 @@ public class Produto {
             int quantidadeEstoque = scanner.nextInt();
 
             return new Produto(nome, codigo, preco, quantidadeEstoque);
+
         }
 
         public void informacaoProduto() {
@@ -41,4 +41,16 @@ public class Produto {
             System.out.println("Preço unitário: R$" + preco);
             System.out.println("Quantidade em estoque: " + quantidadeEstoque + " unidades\n");
         }
+
+        public void compra(int quantidadeComprada) {
+            if (quantidadeComprada > 0) {
+                quantidadeEstoque += quantidadeComprada;
+                System.out.println("Você comprou " + quantidadeComprada + " unidades de " + nome);
+            }
+            else {
+                System.out.println("Quantidade inválida para compra.");
+                informacaoProduto();
+            }
+        }
+
 }
