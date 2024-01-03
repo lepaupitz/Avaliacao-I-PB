@@ -1,6 +1,17 @@
 Exercício 2 - Login
 
-Na primeira parte tive dificuldade na parte da validação do login, pelo fato que tinha formatado errado, após achar o erro de formatação, funcionou certo.
-Para adicionar um leitor de hora e uma mensagem para testar se estava funcionando, foi tranquilo, fiz uma função no qual fizesse isso e depois coloquei no main code para imprimir só a mensagem.
-Na função de adicionar as mensagens conforme o horário utilizei o if/ else if/ else, porém uma alternativa também era utilizar o switch/case.
-Fora a dificuldade que tive na primeira parte do exercício, o resto foi tranquilo.
+No exercício tem 3 logins e senhas que são válidas, que são:
+
+Login: admin
+Senha: admin
+
+Login: teste
+Senha: teste123
+
+Login: leandro
+Senha: leandro1
+
+Após você você logar, aparecerá uma mensagem de acordo com o horário que você está logando.
+O programa tem uma função para validar a senha, na qual ela percorre as Strings de Login e senha.
+E também tem uma função para identificar o horário do login e após é usado o if/else, para verificar em qual horário foi entrado no sistema e qual mensagem deverá aparecer para o usuário.
+Na função mensagemHorário (como identifiquei o nome da função) també poderia ser utilizado o switch/case.
