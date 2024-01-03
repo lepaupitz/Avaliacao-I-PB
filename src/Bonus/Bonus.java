@@ -6,7 +6,7 @@ public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
     try {
-        int numeroFuncionarios = 0;
+        int numeroFuncionarios;
 
         while (true) {
             try {
@@ -27,23 +27,23 @@ public static void main(String[] args) {
             nomeFuncionario[i] = scanner.next();
 
             while (true) {
-                    try {
-                        System.out.print("Salário do funcionário: ");
-                        salario[i] = scanner.nextDouble();
-                        break;
-                    } catch (InputMismatchException e) {
-                        System.out.println("Por favor, insira um número válido para o salário.");
-                        scanner.next();
-                    }
+                try {
+                    System.out.print("Salário do funcionário: ");
+                    salario[i] = scanner.nextDouble();
+                    break;
+                } catch (InputMismatchException e) {
+                    System.out.println("Por favor, insira um número válido para o salário.");
+                    scanner.next();
                 }
             }
+        }
 
         for (int i = 0; i < numeroFuncionarios; i++) {
             System.out.println("\nFuncionário: " + nomeFuncionario[i]);
             System.out.println("Salário: " + salario[i]);
 
-            double bonus = 0.0;
-            double salarioTotal = 0.0;
+            double bonus;
+            double salarioTotal;
 
             if (salario[i] <= 1000) {
                 bonus = salario[i] * 0.2;
@@ -61,7 +61,7 @@ public static void main(String[] args) {
         }
 
     } catch (Exception e) {
-        System.out.println("Ocorreu um erro inesperado. O programa será encerrado.");
+        System.out.println("Ocorreu um erro inesperado. O programa será encerrado. Erro: " + e.getMessage());
     } finally {
         scanner.close();
     }
