@@ -1,15 +1,21 @@
 import java.util.Scanner;
 
-
 public static void main (String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Digite a mensagem: ");
-    String mensagem = scanner.nextLine();
+    try {
+        System.out.println("Digite a mensagem: ");
+        String mensagem = scanner.nextLine();
 
-    String sentimento = analizarSentimentos(mensagem);
+        String sentimento = analizarSentimentos(mensagem);
 
-    System.out.println(sentimento);
+        System.out.println(sentimento);
+
+    } catch (Exception e) {
+        System.out.println("Ocorreu um erro durante a entrada de dados: " + e.getMessage());
+    } finally {
+        scanner.close();
+    }
 }
 
     public static String analizarSentimentos(String mensagem) {
@@ -38,7 +44,5 @@ public static void main (String[] args) {
     while (index!= -1) {
         i++;
         index = mensagem.indexOf(emoticon, index +1);
-    }
-
-    return i;
+    } return i;
     }
