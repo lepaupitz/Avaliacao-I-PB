@@ -17,22 +17,16 @@ public static void main(String[] args) {
         System.out.println("Erro: " + e.getMessage());
     }
     finally {
-        if (scanner!= null){
-            scanner.close();
-        }
+        scanner.close();
     }
 }
 
 public static boolean verificarPalindromo(String str){
-   try {
-       String mensagemMinuscula = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
-       String mensagemContrario = new StringBuilder(mensagemMinuscula).reverse().toString();
+    String mensagemMinuscula = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    String mensagemContrario = new StringBuilder(mensagemMinuscula).reverse().toString();
 
-       return mensagemMinuscula.equals(mensagemContrario);
-   } catch (Exception e){
-       System.out.println("Erro durante o processamento: " + e.getMessage());
-       return false;
-   }
+    return mensagemMinuscula.equals(mensagemContrario);
+
 }
 
 
