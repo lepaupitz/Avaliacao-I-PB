@@ -4,7 +4,6 @@ public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in);
 
-    // Perguntas
     String[] perguntas = {
             "Quanto vale a divisão de 10 por 2?",
             "Qual é a soma de 10 com 20?",
@@ -16,7 +15,6 @@ public static void main(String[] args) {
             "Qual o número de arestas de um círculo?"
     };
 
-    // Respostas
     String[] respostas = {
             "5",
             "30",
@@ -31,32 +29,34 @@ public static void main(String[] args) {
     int errado = 0;
     int correto = 0;
 
-    //Nome do usuário
-    System.out.print("Digite seu nome: ");
-    String nomeUsuario = scanner.nextLine();
+    try {
+        System.out.print("Digite seu nome: ");
+        String nomeUsuario = scanner.nextLine();
         System.out.println("Responda as seguintes pergutas: \n");
 
+        for (int i = 0; i < perguntas.length; i++) {
+            System.out.println(perguntas[i]);
+            System.out.print("Resposta: ");
+            String respostaUsuario = scanner.nextLine();
 
-    // Perguntas e verificar se a resposta esta certa ou errada
-    for (int i = 0; i < perguntas.length; i++) {
-        System.out.println(perguntas[i]);
-        System.out.print("Resposta: ");
-        String respostaUsuario = scanner.nextLine();
+            if (respostaUsuario.equalsIgnoreCase(respostas[i])) {
+                System.out.println("Resposta correta!\n");
+                correto++;
+            }
+            else {
+                System.out.println("Resposta errada.\n");
+                errado++;
+            }
+        }
 
-        if (respostaUsuario.equalsIgnoreCase(respostas[i])) {
-            System.out.println("Resposta correta!\n");
-            correto++;
-        }
-        else {
-            System.out.println("Resposta errada.\n");
-            errado++;
-        }
+        System.out.println("\nUsuário: " + nomeUsuario);
+        System.out.println("Acertos: " + correto);
+        System.out.println("Erros: " + errado);
+
+    } catch (Exception e) {
+        System.out.println("Ocorreu um erro no programa: " + e.getMessage());
+    } finally {
+        scanner.close();
     }
 
-    // Resultado Final
-    System.out.println("\nUsuário: " + nomeUsuario);
-    System.out.println("Acertos: " + correto);
-    System.out.println("Erros: " + errado);
-
-    scanner.close();
 }
